@@ -272,9 +272,7 @@ Function({
 	}
 	return await message.send(`*${result.title}*\n\n*id: ${ytId[1]}*\n\n${t}Available quality${t}\n\n${list}\n_To download, please reply with the desired quality number._`);
 	};
-	const search = await yts(match)
-	if (search.all.length < 1) return await message.reply('_Not Found_');
-	try {
+	
 	const result = await video(search.videos[0].videoId);
 	if (!result) return await message.reply('_Failed to download_');
 	return await message.send(result.file, 'video', { quoted: message.data, caption: result.title });

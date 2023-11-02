@@ -275,8 +275,7 @@ Function({
 	
 	const result = await video(search.videos[0].videoId);
 	if (!result) return await message.reply('_Failed to download_');
-	return await message.send(result.file, 'video', { quoted: message.data, caption: result.title });
-	} catch (error) {
+	
 	return await message.send('```' + error.message + '```')
 	}
 });
